@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/plugins.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Teste de conhecimneto Serasa</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#"><img src="assets/serasa-logo-full.svg" alt="Logo Serasa"></a>
+            </div>
+            <div class="no-account">
+                <p>Desejar conhecer outros serviços?
+                    <a href="#">Clique aqui!</a>
+                </p>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="feedbackmsg">
+
+            <h3 class="text-sucess">Feedback enviado com sucesso!</h3>
+            <h1 class="title-sucess">Obrigado pela preferência!!</h1>
+            <h3 class="feed-text">Faça um feedback dos nossos serviços ;)</h3>
+            <button class="btn-show-modal btn-primary">Clique aqui!</button>
+        </section>
+    </main>
+    <section class="modal">
+        <div id="loading-spinner" class="loading-spinner">
+            Aguarde!!<br>
+            Estamos processando os dados!
+        </div>
+        <div class="overlay"></div>
+        <div class="box">
+            <div class="modal-text">
+                <button class="fechar-modal">X</button>
+                <p>Conte o quanto você está satisfeito com nossos serviços</p>
+                <h5>Marque de 1 à 5 estrelas</h5>
+                <form id="feedback-form">
+                    <div class="rating" id="rating">
+                        <input type="radio" name="rating" id="star5" value="5"><label for="star5"></label>
+                        <input type="radio" name="rating" id="star4" value="4"><label for="star4"></label>
+                        <input type="radio" name="rating" id="star3" value="3"><label for="star3"></label>
+                        <input type="radio" name="rating" id="star2" value="2"><label for="star2"></label>
+                        <input type="radio" name="rating" id="star1" value="1" checked><label for="star1"></label>
+                    </div>
+                    <input type="text" name="nome" placeholder="Nome" id="nome" required>
+                    <textarea name="comentario" cols="30" rows="10" placeholder="Comentário (Opcional)" id="comentario"></textarea>
+                    <button type="submit" class="btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </section>
+    <footer>
+        <p>Nós protegemos a sua privacidade ❤</p>
+        <a href="https://www.serasa.com.br/privacidade">Termos de uso e privacidade</a>
+    </footer>
+    <script src="/js/plugins.js"></script>
+    <script src="/js/all.js"></script>
+    </script>
+</body>
+
+</html>

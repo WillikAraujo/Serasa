@@ -1,0 +1,155 @@
+main {
+  height: 80vh;
+  background-color: $light-high;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  .feedbackmsg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .text-sucess {
+      display: none;
+    }
+    .title-sucess {
+      margin-bottom: 2rem;
+      display: none;
+    }
+    h3 {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.show-modal {
+  header,
+  main {
+    filter: blur(0.5rem);
+  }
+  .modal {
+    opacity: 1;
+    pointer-events: all;
+    .box {
+      transform: translatey(0px);
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2023;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+
+  .loading-spinner {
+    opacity: 0;
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $light-solid;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 2024;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    &.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
+  .box {
+    position: relative;
+    padding: 40px;
+    width: 50rem;
+    height: 50rem;
+    border-radius: 10px;
+    background-color: $light-solid;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+    border: solid 1px #d6d7dc;
+    transform: translatey(170px);
+    transition: all 0.2s ease-in-out;
+
+    .fechar-modal {
+      position: absolute;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $light-high;
+      color: $dark-high;
+      right: -1.5rem;
+      top: -1.5rem;
+      border: solid 1px #d6d7dc;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    .modal-text {
+      p {
+        margin: 1rem 0;
+      }
+      h5 {
+        margin-bottom: 1rem;
+        color: $dark-high;
+      }
+    }
+    .rating {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row-reverse;
+    }
+    .rating input[type='radio'] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .rating label {
+      cursor: pointer;
+    }
+
+    .rating label::before {
+      content: '\2605';
+      font-size: 24px;
+      color: #ccc;
+      margin-right: 5px;
+    }
+
+    .rating label:hover::before,
+    .rating input[type='radio']:checked ~ label::before {
+      color: #ffcc00;
+    }
+    textarea {
+      margin-top: 1rem;
+    }
+  }
+}
