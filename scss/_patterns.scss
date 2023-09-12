@@ -46,3 +46,13 @@ textarea {
     font-weight: 700;
   }
 }
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .btn-primary {
+    padding: 1rem 2.2rem;
+  }
+}

@@ -5,7 +5,6 @@ const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
-const { plugins } = require('@babel/preset-env/lib/plugins-compat-data');
 
 function compilaSass() {
   return gulp
@@ -48,16 +47,6 @@ function gulpJs() {
 }
 gulp.task('alljs', gulpJs);
 
-function pluginsJs() {
-  return gulp
-    .src(['js/lib/aos.min.js', 'js/lib/swiper.min.js'])
-    .pipe(concat('plugins.js'))
-    .pipe(gulp.dest('js/'))
-    .pipe(browserSync.stream());
-}
-
-gulp.task('pluginjs', pluginsJs);
-
 function browser() {
   browserSync.init({
     server: {
@@ -73,18 +62,10 @@ function watch() {
   gulp.watch('*.html').on('change', browserSync.reload);
   gulp.watch('css/lib/*.css', pluginsCSS);
   gulp.watch('js/scripts/*.js', gulpJs);
-  gulp.watch('js/lib/*.js', pluginsJs);
 }
 gulp.task('watch', watch);
 
 gulp.task(
   'default',
-  gulp.parallel(
-    'watch',
-    'browser-sync',
-    'sass',
-    'plugincss',
-    'alljs',
-    'pluginjs',
-  ),
+  gulp.parallel('watch', 'browser-sync', 'sass', 'plugincss', 'alljs'),
 );

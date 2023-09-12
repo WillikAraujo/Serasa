@@ -1,21 +1,16 @@
-const btnmodal = document.querySelector('.btn-show-modal');
-const btnfecharmodal = document.querySelector('.fechar-modal');
-const overlay = document.querySelector('.overlay');
-
-function onofmodal() {
+document.addEventListener('DOMContentLoaded', function () {
+  const formFeed = document.getElementById('feedback-form');
+  const btnmodal = document.querySelector('.btn-show-modal');
+  const btnfecharmodal = document.querySelector('.fechar-modal');
+  const overlay = document.querySelector('.overlay');
   const html = document.documentElement;
-  html.classList.toggle('show-modal');
-  formFeed.reset();
-}
 
-btnmodal.addEventListener('click', () => {
-  onofmodal();
-});
+  function toggleModal() {
+    html.classList.toggle('show-modal');
+    formFeed.reset();
+  }
 
-btnfecharmodal.addEventListener('click', () => {
-  onofmodal();
-});
-
-overlay.addEventListener('click', () => {
-  onofmodal();
+  btnmodal.addEventListener('click', toggleModal);
+  btnfecharmodal.addEventListener('click', toggleModal);
+  overlay.addEventListener('click', toggleModal);
 });
