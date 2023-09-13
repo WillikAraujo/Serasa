@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', function () {
       loadingElement.classList.add('hide');
 
       const lastFivePosts = data.slice(-3);
+      const notFoundFb = document.querySelector('.not-found-fb');
+
+      if (lastFivePosts == 0) {
+        notFoundFb.style.display = 'block';
+      }
 
       lastFivePosts.forEach((post) => {
         const div = document.createElement('div');
