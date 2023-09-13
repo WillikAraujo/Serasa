@@ -9,7 +9,8 @@ Neste guia, aprenderemos como alterar a paleta de cores do site.
 É importante entender que as variáveis são definidas com '--nome-da-variável'.  
 Dentro de um seletor, normalmente ':root', parar criar uma variável global.
 
-O arquivo css que está sendo importado é o [main.css](main/css/main.css)
+O arquivo css que está sendo importado é o [main.css]([main.css](/WillikAraujo/Serasa/blob/main/css/main.css)
+)
 
 ![variables](/material/EXERCISE%201/variables.png)
 
